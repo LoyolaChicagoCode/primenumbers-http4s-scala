@@ -1,0 +1,39 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+logs/
+proguard_cache/
+target/
+tmp/
+
+# Local configuration file (sdk path, etc)
+local.properties
+.cache/
+.classpath
+.project
+.settings/
+*.iml
+.idea/
+local.sbt
+.bsp/
+
+# Emacs files
+*~
+\#*\#
+
+# Mac files
+.DS_Store
+
+# SBT configuration files
+# remove if specific version of SBT is required
+project/build.properties 
