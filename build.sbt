@@ -30,3 +30,5 @@ scalacOptions ++= Seq(
   "-feature",
   "-Xfatal-warnings",
 )
+
+enablePlugins(JavaAppPackaging)
