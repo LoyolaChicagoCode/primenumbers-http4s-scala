@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala.svg?branch=master)](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala)
+![Scala CI](https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala/workflows/Scala%20CI/badge.svg)
 [![codecov](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala/branch/master/graph/badge.svg)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3090cda0e2b48ddb9a8609fc763d741)](https://www.codacy.com/app/laufer/primenumbers-http4s-scala)
 
