@@ -2,7 +2,7 @@ package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.Sync
 import cats.implicits._
-import org.http4s.{HttpRoutes, MediaType, Response}
+import org.http4s.{HttpRoutes, MediaType}
 import org.http4s.headers.`Content-Type`
 import org.http4s.dsl.Http4sDsl
 import org.http4s.scalaxml._
@@ -19,7 +19,7 @@ object PrimeCheckerRoutes {
             <head><title>{title}</title></head>
             <body>
               <h1>{title}</h1>
-              <p>Append a whole number to the request URL to check whether it is a prime.</p>
+              <p>Append a whole number to the request URL to check whether it is prime.</p>
               <p>No more than ${Long.MaxValue}, please.</p>
               <p>The code for this service is <a href="https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala">on GitHub</a>.</p>
             </body>
