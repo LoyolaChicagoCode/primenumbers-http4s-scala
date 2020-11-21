@@ -1,6 +1,6 @@
 ![Scala CI](https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala/workflows/Scala%20CI/badge.svg)
 [![codecov](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala/branch/master/graph/badge.svg)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3090cda0e2b48ddb9a8609fc763d741)](https://www.codacy.com/app/laufer/primenumbers-http4s-scala)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/20f5854f50c94a448968683ad33a687f)](https://www.codacy.com/gh/LoyolaChicagoCode/primenumbers-http4s-scala/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LoyolaChicagoCode/primenumbers-http4s-scala&amp;utm_campaign=Badge_Grade)
 
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Percentage of issues still open")
