@@ -1,7 +1,6 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.{ConcurrentEffect, ContextShift, Timer}
-import cats.implicits._
 import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
 import org.http4s.implicits._
@@ -17,18 +16,13 @@ object PrimeCheckerServer {
     for {
       client <- BlazeClientBuilder[F](global).stream
       primeCheckerAlg = PrimeChecker.impl[F]
-      helloWorldAlg = HelloWorld.impl[F]
-      jokeAlg = Jokes.impl[F](client)
 
       // Combine Service Routes into an HttpApp.
       // Can also be done via a Router if you
       // want to extract a segments not checked
       // in the underlying routes.
-      httpApp = (
-        PrimeCheckerRoutes.primeCheckerRoutes[F](primeCheckerAlg) <+>
-        PrimeCheckerRoutes.helloWorldRoutes[F](helloWorldAlg) <+>
-        PrimeCheckerRoutes.jokeRoutes[F](jokeAlg)
-      ).orNotFound
+      httpApp =
+        PrimeCheckerRoutes.primeCheckerRoutes[F](primeCheckerAlg).orNotFound
 
       // With Middlewares in place
       finalHttpApp = Logger.httpApp(true, true)(httpApp)
