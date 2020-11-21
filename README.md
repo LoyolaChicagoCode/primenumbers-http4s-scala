@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala.svg?branch=master)](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala) 
+[![Build Status](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala.svg?branch=master)](https://travis-ci.org/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![codecov](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala/branch/master/graph/badge.svg)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3090cda0e2b48ddb9a8609fc763d741)](https://www.codacy.com/app/laufer/primenumbers-http4s-scala)
 
@@ -27,16 +27,16 @@ Test with
 
     $ sbt test
 
-Run with 
+Run with
 
     $ sbt run
-	
+
 or
 
     $ sbt stage
-	$ foreman start
+	$ ./target/universal/stage/bin/primenumbers-http4s-scala
 
-or deploy to a foreman-compatible APaaS provider, such as Heroku.
+or deploy to a suitable APaaS provider, such as Heroku.
 
 Then, http://host/n returns
 
