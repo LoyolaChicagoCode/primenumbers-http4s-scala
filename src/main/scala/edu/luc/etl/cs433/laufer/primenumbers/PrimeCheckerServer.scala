@@ -9,11 +9,12 @@ import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.server.middleware.Logger
 import scala.concurrent.ExecutionContext.global
 
-object PrimenumbersServer {
+object PrimeCheckerServer {
 
   def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], C: ContextShift[F]): Stream[F, Nothing] = {
     for {
       client <- BlazeClientBuilder[F](global).stream
+      primeCheckerAlg = PrimeChecker.impl[F]
       helloWorldAlg = HelloWorld.impl[F]
       jokeAlg = Jokes.impl[F](client)
 
@@ -22,8 +23,9 @@ object PrimenumbersServer {
       // want to extract a segments not checked
       // in the underlying routes.
       httpApp = (
-        PrimenumbersRoutes.helloWorldRoutes[F](helloWorldAlg) <+>
-        PrimenumbersRoutes.jokeRoutes[F](jokeAlg)
+        PrimeCheckerRoutes.primeCheckerRoutes[F](primeCheckerAlg) <+>
+        PrimeCheckerRoutes.helloWorldRoutes[F](helloWorldAlg) <+>
+        PrimeCheckerRoutes.jokeRoutes[F](jokeAlg)
       ).orNotFound
 
       // With Middlewares in place

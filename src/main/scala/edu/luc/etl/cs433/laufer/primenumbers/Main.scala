@@ -5,5 +5,5 @@ import cats.implicits._
 
 object Main extends IOApp {
   def run(args: List[String]) =
-    PrimenumbersServer.stream[IO].compile.drain.as(ExitCode.Success)
+    PrimeCheckerServer.stream[IO].compile.drain.as(ExitCode.Success)
 }
