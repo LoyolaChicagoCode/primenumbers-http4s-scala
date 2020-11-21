@@ -20,9 +20,9 @@ object PrimeChecker {
     else if (i % 2 == 0)
       false
     else {
-      val half = BigInt(Math.sqrt(i.toDouble).toLong)
+      val sqroot = BigInt(Math.sqrt(i.toDouble).toLong)
       var k = BigInt(3)
-      while (k <= half) {
+      while (k <= sqroot) {
         if (i % k == 0) return false
         k += 2
       }
