@@ -11,7 +11,7 @@
 [![Codacy Badge](https://img.shields.io/codacy/grade/20f5854f50c94a448968683ad33a687f)](https://www.codacy.com/gh/LoyolaChicagoCode/primenumbers-http4s-scala/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LoyolaChicagoCode/primenumbers-http4s-scala&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codeclimate.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/maintainability)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/LoyolaChicagoCode/primenumbers-http4s-scala)](https://www.codefactor.io/repository/github/loyolachicagocode/primenumbers-http4s-scala)
-- Availability (instances 1 and 2)  
+- Availability (by deployed instance)  
 [![7-day Uptime Heroku 1](https://img.shields.io/uptimerobot/ratio/7/m786446600-5f6dd44ec992b32e992b9a4e)](https://laufer-primechecker.herokuapp.com/)
 [![7-day Uptime Heroku 2](https://img.shields.io/uptimerobot/ratio/7/m786446601-60eff8d20cb712ba914e71bb)](https://laufer-primechecker2.herokuapp.com/)
 - Other  
