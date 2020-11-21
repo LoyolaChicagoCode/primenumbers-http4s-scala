@@ -2,9 +2,6 @@
 [![codecov](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala/branch/master/graph/badge.svg)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3090cda0e2b48ddb9a8609fc763d741)](https://www.codacy.com/app/laufer/primenumbers-http4s-scala)
 
-[![Stories in Ready](https://badge.waffle.io/LoyolaChicagoCode/primenumbers-http4s-scala.png?label=ready&title=Ready)](http://waffle.io/LoyolaChicagoCode/primenumbers-http4s-scala)
-[![Issue Stats](http://issuestats.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/badge/pr)](http://issuestats.com/github/LoyolaChicagoCode/primenumbers-http4s-scala)
-[![Issue Stats](http://issuestats.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/badge/issue)](http://issuestats.com/github/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Percentage of issues still open")
 
