@@ -32,6 +32,6 @@ scalacOptions ++= Seq(
   "-Xfatal-warnings",
 )
 
-coverageExcludedFiles := "*.Main;*.PrimeCheckerServer"
+coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
 
 enablePlugins(JavaAppPackaging)
