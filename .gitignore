@@ -36,4 +36,4 @@ local.sbt
 
 # SBT configuration files
 # remove if specific version of SBT is required
-project/build.properties 
+#project/build.properties
