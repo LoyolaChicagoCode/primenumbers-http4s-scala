@@ -18,4 +18,6 @@ jobs:
       with:
         java-version: 1.11
     - name: Run tests
-      run: sbt test
+      run: sbt coverage test coverageReport
+    - name: Submit coverage report
+      run: bash <(curl -s https://codecov.io/bash)
