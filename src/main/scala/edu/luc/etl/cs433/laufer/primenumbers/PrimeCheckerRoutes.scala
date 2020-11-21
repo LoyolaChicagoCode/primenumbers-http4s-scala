@@ -19,7 +19,7 @@ object PrimeCheckerRoutes {
             <head><title>{title}</title></head>
             <body>
               <h1>{title}</h1>
-              <p>Append a number to the request to check whether it is a prime.</p>
+              <p>Append a whole number to the request URL to check whether it is a prime.</p>
               <p>No more than ${Long.MaxValue}, please.</p>
               <p>The code for this service is <a href="https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala">on GitHub</a>.</p>
             </body>
