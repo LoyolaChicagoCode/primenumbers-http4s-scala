@@ -17,7 +17,7 @@ class PrimeCheckerSpec extends Specification with DataTables {
   "PrimeChecker service works for values in table" >> {
     primeTable |> {
       (number, result) =>
-        if (result) uriReturns200(number) else uriReturns404(number)
+        serviceReturnsStatus(number, if (result) Status.Ok else Status.NotFound)
     }
   }
 
@@ -53,14 +53,11 @@ class PrimeCheckerSpec extends Specification with DataTables {
       100000077 ! false
 
   private[this] def retPrimeChecker(i: Int): Response[IO] = {
-    val getHW = Request[IO](Method.GET, uri"/" / s"$i")
+    val getPC = Request[IO](Method.GET, uri"/" / s"$i")
     val primeChecker = PrimeChecker.impl[IO]
-    PrimeCheckerRoutes.primeCheckerRoutes(primeChecker).orNotFound(getHW).unsafeRunSync()
+    PrimeCheckerRoutes.primeCheckerRoutes(primeChecker).orNotFound(getPC).unsafeRunSync()
   }
 
-  private[this] def uriReturns200(i: Int): MatchResult[Status] =
-    retPrimeChecker(i).status must beEqualTo(Status.Ok)
-
-  private[this] def uriReturns404(i: Int): MatchResult[Status] =
-    retPrimeChecker(i).status must beEqualTo(Status.NotFound)
+  private[this] def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
+    retPrimeChecker(i).status must beEqualTo(s)
 }
