@@ -29,7 +29,8 @@ scalacOptions ++= Seq(
 //  "-language:higherKinds",
 //  "-language:postfixOps",
   "-feature",
-  "-Xfatal-warnings",
+  "-Xfatal-warnings"
+  //"-Yexplicit-nulls" TODO enable for Scala 3
 )
 
 coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
