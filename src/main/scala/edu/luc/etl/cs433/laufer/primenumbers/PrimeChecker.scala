@@ -1,17 +1,6 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
-import cats.Applicative
-import cats.implicits._
-
-trait PrimeChecker[F[_]]{
-  def check(n: BigInt): F[Boolean]
-}
-
 object PrimeChecker {
-  implicit def apply[F[_]](implicit ev: PrimeChecker[F]): PrimeChecker[F] = ev
-
-  def impl[F[_]: Applicative]: PrimeChecker[F] = (i: BigInt) => isPrime(i).pure[F]
-
   def isPrime(i: BigInt): Boolean =
     if (i < 2)
       false

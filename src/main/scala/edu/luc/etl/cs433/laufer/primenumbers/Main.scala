@@ -1,8 +1,16 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.{ExitCode, IO, IOApp}
+import org.http4s.server.blaze.BlazeServerBuilder
+import scala.concurrent.ExecutionContext.global
 
 object Main extends IOApp {
-  def run(args: List[String]) =
-    PrimeCheckerServer.stream[IO].compile.drain.as(ExitCode.Success)
+  def run(args: List[String]): IO[ExitCode] =
+    BlazeServerBuilder[IO](global)
+      .bindHttp(8080, "localhost")
+      .withHttpApp(PrimeCheckerRoutes.routes)
+      .serve
+      .compile
+      .drain
+      .as(ExitCode.Success)
 }

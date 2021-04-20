@@ -1,12 +1,14 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.IO
-import org.http4s._
+import cats.effect.testing.specs2.CatsEffect
+import cats.effect.unsafe.implicits.global
+import org.http4s.{Method, Request, Response, Status}
 import org.http4s.implicits._
 import org.specs2.mutable.Specification
 import org.specs2.matcher.{DataTables, MatchResult}
 
-class PrimeCheckerSpec extends Specification with DataTables {
+class PrimeCheckerSpec extends Specification with DataTables with CatsEffect {
 
   "PrimeChecker method works for values in table" >> {
     primeTable |> {
@@ -54,8 +56,7 @@ class PrimeCheckerSpec extends Specification with DataTables {
 
   private[this] def retPrimeChecker(i: Int): Response[IO] = {
     val getPC = Request[IO](Method.GET, uri"/" / s"$i")
-    val primeChecker = PrimeChecker.impl[IO]
-    PrimeCheckerRoutes.primeCheckerRoutes(primeChecker).orNotFound(getPC).unsafeRunSync()
+    PrimeCheckerRoutes.routes(getPC).unsafeRunSync()
   }
 
   private[this] def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
