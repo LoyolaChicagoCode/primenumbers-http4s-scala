@@ -7,9 +7,9 @@ import org.http4s.headers.`Content-Type`
 import org.http4s.implicits._
 import org.http4s.scalaxml.xmlEncoder
 
-object PrimeCheckerRoutes {
+object PrimeCheckerApp {
 
-  val routes: HttpApp[IO] = HttpRoutes.of[IO] {
+  val routes: HttpRoutes[IO] = HttpRoutes.of[IO] {
     case GET -> Root =>
       val title = "Welcome to the prime checker web service!"
       Ok(<html>
@@ -27,5 +27,7 @@ object PrimeCheckerRoutes {
         Ok(f"Yay, $number happens to be a prime!")
       else
         NotFound(f"Bummer, $number is not a prime.")
-  }.orNotFound
+  }
+
+  val app: HttpApp[IO] = routes.orNotFound
 }

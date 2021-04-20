@@ -8,7 +8,7 @@ object Main extends IOApp {
   def run(args: List[String]): IO[ExitCode] =
     BlazeServerBuilder[IO](global)
       .bindHttp(8080, "localhost")
-      .withHttpApp(PrimeCheckerRoutes.routes)
+      .withHttpApp(PrimeCheckerApp.app)
       .serve
       .compile
       .drain

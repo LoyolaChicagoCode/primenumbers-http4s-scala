@@ -56,7 +56,7 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect {
 
   private[this] def retPrimeChecker(i: Int): Response[IO] = {
     val getPC = Request[IO](Method.GET, uri"/" / s"$i")
-    PrimeCheckerRoutes.routes(getPC).unsafeRunSync()
+    PrimeCheckerApp.app(getPC).unsafeRunSync()
   }
 
   private[this] def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =

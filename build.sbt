@@ -8,25 +8,26 @@ lazy val root = (project in file("."))
     organization := "edu.luc.etl",
     name := "primenumbers-http4s-scala",
     version := "0.0.3-SNAPSHOT",
+//    scalaVersion := "3.0.0-RC2",
     scalaVersion := "2.13.5",
     libraryDependencies ++= Seq(
-      "org.http4s"    %% "http4s-blaze-server"        % Http4sVersion,
-      "org.http4s"    %% "http4s-blaze-client"        % Http4sVersion,
-      "org.http4s"    %% "http4s-dsl"                 % Http4sVersion,
-      "org.http4s"    %% "http4s-scala-xml"           % Http4sVersion,
-      "org.specs2"    %% "specs2-core"                % Specs2Version % Test,
-      "org.typelevel" %% "cats-effect-testing-specs2" % CatsEffectTestingSpecs2Version % Test
+      "org.http4s"     %% "http4s-blaze-server"        % Http4sVersion,
+      "org.http4s"     %% "http4s-blaze-client"        % Http4sVersion,
+      "org.http4s"     %% "http4s-dsl"                 % Http4sVersion,
+      "org.http4s"     %% "http4s-scala-xml"           % Http4sVersion,
+      "org.typelevel"  %% "cats-effect-testing-specs2" % CatsEffectTestingSpecs2Version % Test,
+      "org.specs2"     %% "specs2-core"                % Specs2Version % Test
     ),//.map(_.cross(CrossVersion.for3Use2_13)),
     libraryDependencies ++= Seq(
-      "ch.qos.logback"  %  "logback-classic"     % LogbackVersion
+      "ch.qos.logback" %  "logback-classic"            % LogbackVersion
     )
   )
 
 scalacOptions ++= Seq(
   "-deprecation",
   "-encoding", "UTF-8",
-  "-language:higherKinds",
-  "-language:postfixOps",
+//  "-language:higherKinds",
+//  "-language:postfixOps",
   "-feature",
   "-Xfatal-warnings",
 )
