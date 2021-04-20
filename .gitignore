@@ -26,6 +26,12 @@ local.properties
 .idea/
 local.sbt
 .bsp/
+.bloop/
+.metals/
+.vscode/
+project/.bloop/
+project/metals.sbt
+project/project/
 
 # Emacs files
 *~
@@ -36,4 +42,4 @@ local.sbt
 
 # SBT configuration files
 # remove if specific version of SBT is required
-#project/build.properties
+project/build.properties 
