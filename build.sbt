@@ -29,3 +29,5 @@ scalacOptions ++= Seq(
 coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
 
 enablePlugins(JavaAppPackaging)
+
+scalacOptions ++= Seq("-rewrite", "-new-syntax")
