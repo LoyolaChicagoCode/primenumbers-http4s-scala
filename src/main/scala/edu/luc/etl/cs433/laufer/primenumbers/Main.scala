@@ -1,7 +1,7 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.{ExitCode, IO, IOApp}
-import org.http4s.server.blaze.BlazeServerBuilder
+import org.http4s.blaze.server.BlazeServerBuilder
 import scala.concurrent.ExecutionContext.global
 
 object Main extends IOApp {
