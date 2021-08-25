@@ -23,7 +23,7 @@ object PrimeCheckerApp {
         </html>
       ).map(_.withContentType(`Content-Type`(MediaType.text.html)))
     case GET -> Root / LongVar(number) =>
-      if (PrimeChecker.isPrime(BigInt(number)))
+      if PrimeChecker.isPrime(BigInt(number)) then
         Ok(f"Yay, $number happens to be a prime!")
       else
         NotFound(f"Bummer, $number is not a prime.")

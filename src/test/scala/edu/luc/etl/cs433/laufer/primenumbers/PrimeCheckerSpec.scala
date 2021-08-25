@@ -19,7 +19,7 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect {
   "PrimeChecker service works for values in table" >> {
     primeTable |> {
       (number, result) =>
-        serviceReturnsStatus(number, if (result) Status.Ok else Status.NotFound)
+        serviceReturnsStatus(number, if result then Status.Ok else Status.NotFound)
     }
   }
 

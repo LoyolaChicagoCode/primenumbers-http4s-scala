@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
     version := "0.0.3-SNAPSHOT",
     scalaVersion := "3.0.1",
     libraryDependencies ++= Seq(
-p      "org.http4s"     %% "http4s-blaze-server"        % Http4sVersion,
+      "org.http4s"     %% "http4s-blaze-server"        % Http4sVersion,
       "org.http4s"     %% "http4s-blaze-client"        % Http4sVersion,
       "org.http4s"     %% "http4s-dsl"                 % Http4sVersion,
       "org.http4s"     %% "http4s-scala-xml"           % Http4sVersion,
