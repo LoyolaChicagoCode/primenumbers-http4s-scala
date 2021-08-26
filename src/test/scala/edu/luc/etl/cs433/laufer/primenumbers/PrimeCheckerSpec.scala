@@ -4,7 +4,7 @@ import cats.effect.IO
 import cats.effect.testing.specs2.CatsEffect
 import cats.effect.unsafe.implicits.global
 import org.http4s.{Method, Request, Response, Status}
-import org.http4s.implicits._
+import org.http4s.implicits.*
 import org.specs2.mutable.Specification
 import org.specs2.matcher.{DataTables, MatchResult}
 

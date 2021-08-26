@@ -1,10 +1,10 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
 import cats.effect.IO
-import org.http4s.dsl.io._
+import org.http4s.dsl.io.*
 import org.http4s.{HttpApp, HttpRoutes, MediaType}
 import org.http4s.headers.`Content-Type`
-import org.http4s.implicits._
+import org.http4s.implicits.*
 import org.http4s.scalaxml.xmlEncoder
 
 object PrimeCheckerApp {
