@@ -24,7 +24,7 @@ scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-feature",
   "-Yexplicit-nulls",
-//  "-language:strictEquality",
+  "-language:strictEquality",
   "-Xfatal-warnings",
 )
 
