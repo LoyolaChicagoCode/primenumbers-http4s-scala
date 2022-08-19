@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
     organization := "edu.luc.etl",
     name := "primenumbers-http4s-scala",
     version := "0.0.3-SNAPSHOT",
-    scalaVersion := "3.0.2",
+    scalaVersion := "3.1.3",
     libraryDependencies ++= Seq(
       "org.http4s"     %% "http4s-blaze-server"        % Http4sVersion,
       "org.http4s"     %% "http4s-blaze-client"        % Http4sVersion,
