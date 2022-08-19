@@ -1,7 +1,7 @@
-val Http4sVersion                  = "1.0.0-M25"
+val Http4sVersion                  = "1.0.05"
 val Specs2Version                  = "5.0.0-RC-02"
 val CatsEffectTestingSpecs2Version = "1.3.0"
-val LogbackVersion                 = "1.2.6"
+val LogbackVersion                 = "1.2.11"
 
 lazy val root = (project in file("."))
   .settings(
