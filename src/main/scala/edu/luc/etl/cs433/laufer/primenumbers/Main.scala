@@ -6,7 +6,7 @@ import scala.concurrent.ExecutionContext.global
 
 object Main extends IOApp {
   def run(args: List[String]): IO[ExitCode] =
-    BlazeServerBuilder[IO](global)
+    BlazeServerBuilder[IO]
       .bindHttp(8080, "localhost")
       .withHttpApp(PrimeCheckerApp.app)
       .serve
