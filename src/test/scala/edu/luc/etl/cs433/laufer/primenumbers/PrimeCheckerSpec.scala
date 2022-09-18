@@ -8,7 +8,7 @@ import org.http4s.implicits.*
 import org.specs2.mutable.Specification
 import org.specs2.matcher.{DataTables, MatchResult}
 
-class PrimeCheckerSpec extends Specification with DataTables with CatsEffect {
+class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
 
   "PrimeChecker method works for values in table" >> {
     primeTable |> {
@@ -54,11 +54,11 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect {
       100000007 ! true |
       100000077 ! false
 
-  private[this] def retPrimeChecker(i: Int): Response[IO] = {
+  private[this] def retPrimeChecker(i: Int): Response[IO] =
     val getPC = Request[IO](Method.GET, uri"/" / s"$i")
     PrimeCheckerApp.app(getPC).unsafeRunSync()
-  }
 
   private[this] def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
     retPrimeChecker(i).status must beEqualTo(s)
-}
+
+end PrimeCheckerSpec

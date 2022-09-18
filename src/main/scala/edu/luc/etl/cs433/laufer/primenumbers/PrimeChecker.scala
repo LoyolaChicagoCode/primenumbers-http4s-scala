@@ -1,6 +1,6 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
-object PrimeChecker {
+object PrimeChecker:
   def isPrime(i: BigInt): Boolean =
     if i < 2 then
       false
@@ -15,4 +15,4 @@ object PrimeChecker {
         if i % k == 0 then return false
         k += 2
       true
-}
+end PrimeChecker

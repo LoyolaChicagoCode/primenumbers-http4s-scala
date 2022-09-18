@@ -4,7 +4,7 @@ import cats.effect.{ExitCode, IO, IOApp}
 import org.http4s.blaze.server.BlazeServerBuilder
 import scala.concurrent.ExecutionContext.global
 
-object Main extends IOApp {
+object Main extends IOApp:
   def run(args: List[String]): IO[ExitCode] =
     BlazeServerBuilder[IO]
       .bindHttp(8080, "localhost")
@@ -13,4 +13,4 @@ object Main extends IOApp {
       .compile
       .drain
       .as(ExitCode.Success)
-}
+end Main

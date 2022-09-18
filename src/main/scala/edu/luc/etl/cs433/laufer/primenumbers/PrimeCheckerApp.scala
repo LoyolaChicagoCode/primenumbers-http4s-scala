@@ -7,7 +7,7 @@ import org.http4s.headers.`Content-Type`
 import org.http4s.implicits.*
 import org.http4s.scalaxml.xmlEncoder
 
-object PrimeCheckerApp {
+object PrimeCheckerApp:
 
   given CanEqual[Path, Path] = CanEqual.derived
   given CanEqual[Method, Method] = CanEqual.derived
@@ -34,4 +34,4 @@ object PrimeCheckerApp {
   }
 
   val app: HttpApp[IO] = routes.orNotFound
-}
+end PrimeCheckerApp
