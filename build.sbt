@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
     organization := "edu.luc.etl",
     name := "primenumbers-http4s-scala",
     version := "0.0.3-SNAPSHOT",
-    scalaVersion := "3.1.3",
+    scalaVersion := "3.2.0",
     libraryDependencies ++= Seq(
       "org.http4s"     %% "http4s-blaze-server"        % Http4sVersion,
       "org.http4s"     %% "http4s-blaze-client"        % Http4sVersion,
@@ -21,9 +21,10 @@ lazy val root = (project in file("."))
 
 scalacOptions ++= Seq(
   "-deprecation",
-  "-encoding", "UTF-8",
   "-feature",
+  "-unchecked",
   "-Yexplicit-nulls",
+  "-Ysafe-init",
   "-language:strictEquality",
   "-Xfatal-warnings",
 )
@@ -31,5 +32,3 @@ scalacOptions ++= Seq(
 coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
 
 enablePlugins(JavaAppPackaging)
-
-scalacOptions ++= Seq("-rewrite", "-new-syntax")
