@@ -6,8 +6,9 @@ import scala.concurrent.ExecutionContext.global
 
 object Main extends IOApp:
   def run(args: List[String]): IO[ExitCode] =
+    val port = sys.env.get("PORT").getOrElse("80").toInt
     BlazeServerBuilder[IO]
-      .bindHttp(8080, "localhost")
+      .bindHttp(port, "localhost")
       .withHttpApp(PrimeCheckerApp.app)
       .serve
       .compile
