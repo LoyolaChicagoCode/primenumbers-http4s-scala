@@ -18,21 +18,37 @@ lazy val root = (project in file("."))
       "ch.qos.logback"       %  "logback-classic"            % LogbackVersion,
       "org.fusesource.jansi" %  "jansi"                      % JAnsiVersion,
       "org.typelevel"        %% "cats-effect-testing-specs2" % CatsEffectTestingSpecs2Version % Test
+    ),
+    scalacOptions ++= Seq(
+      "-deprecation",
+      "-feature",
+      "-unchecked",
+      "-Yexplicit-nulls",
+      "-Ysafe-init",
+      "-language:strictEquality",
+      "-Xfatal-warnings"
     )
   )
-
-scalacOptions ++= Seq(
-  "-deprecation",
-  "-feature",
-  "-unchecked",
-  "-Yexplicit-nulls",
-  "-Ysafe-init",
-  "-language:strictEquality",
-  "-Xfatal-warnings",
-)
 
 coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
 
 assembly / mainClass := Some("play.core.server.ProdServerStart")
 
 enablePlugins(JavaAppPackaging)
+
+assembly / assemblyMergeStrategy := {
+  case "module-info.class" => MergeStrategy.discard
+  case manifest if manifest.contains("MANIFEST.MF") =>
+    // We don't need manifest files since sbt-assembly will create
+    // one with the given settings
+    MergeStrategy.discard
+  case referenceOverrides if referenceOverrides.contains("reference-overrides.conf") =>
+    // Keep the content for all reference-overrides.conf files
+    MergeStrategy.concat
+  case x =>
+    // For all the other files, use the default sbt-assembly merge strategy
+    val oldStrategy = (assembly / assemblyMergeStrategy).value
+    oldStrategy(x)
+}
+
+publishTo := Some(MavenCache("local-maven", file("maven-repo")))
