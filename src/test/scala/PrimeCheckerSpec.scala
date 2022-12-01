@@ -23,7 +23,7 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
     }
   }
 
-  private[this] val primeTable =
+  private[this] lazy val primeTable =
     "number" | "result" |
       -7 ! false |
       -1 ! false |
