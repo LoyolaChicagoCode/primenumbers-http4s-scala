@@ -32,7 +32,7 @@ lazy val root = (project in file("."))
 
 coverageExcludedPackages := """.*\.Main;.*\.PrimeCheckerServer"""
 
-assembly / mainClass := Some("play.core.server.ProdServerStart")
+assembly / mainClass := Some("edu.luc.etl.cs433.laufer.primenumbers.Main")
 
 enablePlugins(JavaAppPackaging)
 
