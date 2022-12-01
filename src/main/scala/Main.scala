@@ -4,9 +4,11 @@ import cats.effect.{ExitCode, IO, IOApp}
 import org.http4s.blaze.server.BlazeServerBuilder
 import scala.concurrent.ExecutionContext.global
 
+val DEFAULT_PORT = "8080"
+
 object Main extends IOApp:
   def run(args: List[String]): IO[ExitCode] =
-    val port = sys.env.get("PORT").getOrElse("80").toInt
+    val port = sys.props.getOrElse("server.port", sys.env.getOrElse("PORT", DEFAULT_PORT)).toInt
     BlazeServerBuilder[IO]
       .bindHttp(port, "localhost")
       .withHttpApp(PrimeCheckerApp.app)
