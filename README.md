@@ -13,8 +13,8 @@
 [![Technical Debt](https://img.shields.io/codeclimate/tech-debt/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codeclimate.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/trends/technical_debt)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/LoyolaChicagoCode/primenumbers-http4s-scala)](https://www.codefactor.io/repository/github/LoyolaChicagoCode/primenumbers-http4s-scala)
 - Availability (by deployed instance)  
-[![7-day Uptime Heroku 1](https://img.shields.io/uptimerobot/ratio/7/m786446600-5f6dd44ec992b32e992b9a4e)](https://laufer-primechecker.herokuapp.com/)
-[![7-day Uptime Heroku 2](https://img.shields.io/uptimerobot/ratio/7/m786446601-60eff8d20cb712ba914e71bb)](https://laufer-primechecker2.herokuapp.com/)
+[![7-day Uptime Linode](https://img.shields.io/uptimerobot/ratio/7/m786446600-5f6dd44ec992b32e992b9a4e)](https://linode5.cs.luc.edu:8080/)
+[![7-day Uptime Oracle Cloud](https://img.shields.io/uptimerobot/ratio/7/m786446601-60eff8d20cb712ba914e71bb)](https://129.213.20.3:8080/)
 - Other  
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
@@ -45,7 +45,7 @@ or
     $ sbt stage
 	$ ./target/universal/stage/bin/primenumbers-http4s-scala
 
-or deploy to a suitable APaaS provider, such as Heroku.
+or deploy to a suitable cloud provider, such as Oracle.
 
 Then, http://host/n returns
 
@@ -54,16 +54,16 @@ Then, http://host/n returns
 
 # Sample prime numbers to try
 
-- [1013](http://laufer-primechecker.herokuapp.com/1013)
-- [10007](http://laufer-primechecker.herokuapp.com/10007)
-- [100003](http://laufer-primechecker.herokuapp.com/100003)
-- [1000003](http://laufer-primechecker.herokuapp.com/1000003)
-- [10000169](http://laufer-primechecker.herokuapp.com/10000169)
-- [100000007](http://laufer-primechecker.herokuapp.com/100000007)
+- [1013](http://linode5.cs.luc.edu:8080/1013)
+- [10007](http://linode5.cs.luc.edu:8080/10007)
+- [100003](http://linode5.cs.luc.edu:8080/100003)
+- [1000003](http://linode5.cs.luc.edu:8080/1000003)
+- [10000169](http://linode5.cs.luc.edu:8080/10000169)
+- [100000007](http://linode5.cs.luc.edu:8080/100000007)
 
 # Sample non-prime numbers to try
 
-- [999989](http://laufer-primechecker.herokuapp.com/999989)
+- [999989](http://linode5.cs.luc.edu:8080/999989)
 
 # References
 
