@@ -21,7 +21,7 @@ object PrimeCheckerApp:
           <body>
             <h1>$title</h1>
             <p>Append a whole number to the request URL to check whether it is prime.</p>
-            <p>No more than {Long.MaxValue}, please.</p>
+            <p>No more than ${Long.MaxValue}, please.</p>
             <p>The code for this service is <a href="https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala">on GitHub</a>.</p>
           </body>
         </html>
