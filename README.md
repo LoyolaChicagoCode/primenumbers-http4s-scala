@@ -1,7 +1,7 @@
 # Project metrics
 
 - In-process  
-[![Scala CI](https://img.shields.io/github/workflow/status/LoyolaChicagoCode/primenumbers-http4s-scala/Scala%20CI)](https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala/actions)
+[![Scala CI](https://github.com/lucproglangcourse/primenumbers-http4s-scala/actions/workflows/scala.yml/badge.svg)](https://github.com/lucproglangcourse/primenumbers-http4s-scala/actions/workflows/scala.yml)
 [![codecov](https://img.shields.io/codecov/c/github/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Average time to resolve an issue")
