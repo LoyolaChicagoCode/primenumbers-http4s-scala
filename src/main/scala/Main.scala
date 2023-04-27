@@ -1,5 +1,7 @@
 package edu.luc.etl.cs433.laufer.primenumbers
 
+// $COVERAGE-OFF$
+
 import cats.effect.{ExitCode, IO, IOApp}
 import org.http4s.blaze.server.BlazeServerBuilder
 import scala.concurrent.ExecutionContext.global
