@@ -1,7 +1,7 @@
 # Project metrics
 
 - In-process  
-[![Scala CI](https://img.shields.io/github/workflow/status/LoyolaChicagoCode/primenumbers-http4s-scala/Scala%20CI)](https://github.com/LoyolaChicagoCode/primenumbers-http4s-scala/actions)
+[![Scala CI](https://github.com/lucproglangcourse/primenumbers-http4s-scala/actions/workflows/scala.yml/badge.svg)](https://github.com/lucproglangcourse/primenumbers-http4s-scala/actions/workflows/scala.yml)
 [![codecov](https://img.shields.io/codecov/c/github/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codecov.io/gh/LoyolaChicagoCode/primenumbers-http4s-scala)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/LoyolaChicagoCode/primenumbers-http4s-scala)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/LoyolaChicagoCode/primenumbers-http4s-scala.svg)](http://isitmaintained.com/project/LoyolaChicagoCode/primenumbers-http4s-scala "Average time to resolve an issue")
@@ -12,6 +12,8 @@
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codeclimate.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/maintainability)
 [![Technical Debt](https://img.shields.io/codeclimate/tech-debt/LoyolaChicagoCode/primenumbers-http4s-scala)](https://codeclimate.com/github/LoyolaChicagoCode/primenumbers-http4s-scala/trends/technical_debt)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/LoyolaChicagoCode/primenumbers-http4s-scala)](https://www.codefactor.io/repository/github/LoyolaChicagoCode/primenumbers-http4s-scala)
+- Depedencies/composition analysis  
+[![Scala Steward badge](https://img.shields.io/badge/Scala_Steward-helping-blue.svg?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAVFBMVEUAAACHjojlOy5NWlrKzcYRKjGFjIbp293YycuLa3pYY2LSqql4f3pCUFTgSjNodYRmcXUsPD/NTTbjRS+2jomhgnzNc223cGvZS0HaSD0XLjbaSjElhIr+AAAAAXRSTlMAQObYZgAAAHlJREFUCNdNyosOwyAIhWHAQS1Vt7a77/3fcxxdmv0xwmckutAR1nkm4ggbyEcg/wWmlGLDAA3oL50xi6fk5ffZ3E2E3QfZDCcCN2YtbEWZt+Drc6u6rlqv7Uk0LdKqqr5rk2UCRXOk0vmQKGfc94nOJyQjouF9H/wCc9gECEYfONoAAAAASUVORK5CYII=)](https://scala-steward.org)
 - Availability (by deployed instance)  
 [![7-day Uptime Linode](https://img.shields.io/uptimerobot/ratio/7/m786446600-5f6dd44ec992b32e992b9a4e)](https://linode5.cs.luc.edu:8080/)
 [![7-day Uptime Oracle Cloud](https://img.shields.io/uptimerobot/ratio/7/m786446601-60eff8d20cb712ba914e71bb)](https://129.213.20.3:8080/)
