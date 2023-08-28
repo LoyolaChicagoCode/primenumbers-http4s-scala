@@ -20,15 +20,7 @@ lazy val root = (project in file("."))
       "org.fusesource.jansi" %  "jansi"                      % JAnsiVersion,
       "org.typelevel"        %% "cats-effect-testing-specs2" % CatsEffectTestingSpecs2Version % Test
     ),
-    scalacOptions ++= Seq(
-      "-deprecation",
-      "-feature",
-      "-unchecked",
-      "-Yexplicit-nulls",
-      "-Ysafe-init",
-      "-language:strictEquality",
-      "-Xfatal-warnings"
-    )
+    scalacOptions ++= Seq("@.scalacOptions.txt", "-Xfatal-warnings")
   )
 
 assembly / mainClass := Some("edu.luc.etl.cs433.laufer.primenumbers.Main")
