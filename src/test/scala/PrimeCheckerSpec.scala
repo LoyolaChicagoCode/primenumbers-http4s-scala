@@ -10,18 +10,19 @@ import org.specs2.matcher.{DataTables, MatchResult}
 
 class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
 
-  "PrimeChecker method works for values in table" >> {
-    primeTable |> {
-      (number, result) => PrimeChecker.isPrime(BigInt(number)) must_== result
-    }
-  }
+  "PrimeChecker method works for values in table" >> (
+    primeTable |> (
+      (number, result) =>
+        PrimeChecker.isPrime(BigInt(number)) must_== result
+    )
+  )
 
-  "PrimeChecker service works for values in table" >> {
-    primeTable |> {
+  "PrimeChecker service works for values in table" >> (
+    primeTable |> (
       (number, result) =>
         serviceReturnsStatus(number, if result then Status.Ok else Status.NotFound)
-    }
-  }
+    )
+  )
 
   private[this] lazy val primeTable =
     "number" | "result" |

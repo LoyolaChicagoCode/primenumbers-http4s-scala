@@ -12,7 +12,7 @@ object PrimeCheckerApp:
   given CanEqual[Path, Path] = CanEqual.derived
   given CanEqual[Method, Method] = CanEqual.derived
 
-  val routes: HttpRoutes[IO] = HttpRoutes.of[IO] {
+  val routes: HttpRoutes[IO] = HttpRoutes.of[IO]:
     case GET -> Root =>
       val title = "Welcome to the prime checker web service!"
       Ok(s"""
@@ -31,7 +31,6 @@ object PrimeCheckerApp:
         Ok(s"Yay, $number happens to be a prime!")
       else
         NotFound(s"Bummer, $number is not a prime.")
-  }
 
   val app: HttpApp[IO] = routes.orNotFound
 end PrimeCheckerApp
