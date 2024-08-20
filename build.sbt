@@ -2,15 +2,15 @@ val Http4sVersion                  = "1.0.0-M38"
 val Http4sScalaXmlVersion          = Http4sVersion + ".1"
 val Specs2Version                  = "5.0.7"
 val CatsEffectTestingSpecs2Version = "1.5.0"
-val LogbackVersion                 = "1.4.11"
-val JAnsiVersion                   = "2.4.0"
+val LogbackVersion                 = "1.5.7"
+val JAnsiVersion                   = "2.4.1"
 
 lazy val root = (project in file("."))
   .settings(
     organization := "edu.luc.etl",
     name := "primenumbers-http4s-scala",
     version := "0.0.4-SNAPSHOT",
-    scalaVersion := "3.3.0",
+    scalaVersion := "3.3.3",
     libraryDependencies ++= Seq(
       "org.http4s"           %% "http4s-blaze-server"        % Http4sVersion,
       "org.http4s"           %% "http4s-blaze-client"        % Http4sVersion,
