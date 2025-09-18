@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
     organization := "edu.luc.etl",
     name := "primenumbers-http4s-scala",
     version := "0.0.4-SNAPSHOT",
-    scalaVersion := "3.3.3",
+    scalaVersion := "3.7.3",
     libraryDependencies ++= Seq(
       "org.http4s"           %% "http4s-blaze-server"        % Http4sVersion,
       "org.http4s"           %% "http4s-blaze-client"        % Http4sVersion,
@@ -20,7 +20,15 @@ lazy val root = (project in file("."))
       "org.fusesource.jansi" %  "jansi"                      % JAnsiVersion,
       "org.typelevel"        %% "cats-effect-testing-specs2" % CatsEffectTestingSpecs2Version % Test
     ),
-    scalacOptions ++= Seq("@.scalacOptions.txt", "-Xfatal-warnings")
+    scalacOptions ++= Seq(
+      "-deprecation",
+      "-feature",
+      "-unchecked",
+      "-Wvalue-discard",
+      "-language:strictEquality",
+      "-Yexplicit-nulls",
+      "-Wsafe-init"
+    )
   )
 
 assembly / mainClass := Some("edu.luc.etl.cs433.laufer.primenumbers.Main")

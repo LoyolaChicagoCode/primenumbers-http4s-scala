@@ -24,7 +24,7 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
     )
   )
 
-  private[this] lazy val primeTable =
+  private lazy val primeTable =
     "number" | "result" |
       -7 ! false |
       -1 ! false |
@@ -55,11 +55,11 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
       100000007 ! true |
       100000077 ! false
 
-  private[this] def retPrimeChecker(i: Int): Response[IO] =
+  private def retPrimeChecker(i: Int): Response[IO] =
     val getPC = Request[IO](Method.GET, uri"/" / s"$i")
     PrimeCheckerApp.app(getPC).unsafeRunSync()
 
-  private[this] def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
+  private def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
     retPrimeChecker(i).status must beEqualTo(s)
 
 end PrimeCheckerSpec
