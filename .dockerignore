@@ -1,0 +1,39 @@
+# SBT build artifacts
+target/
+project/target/
+project/project/
+
+# IDE files
+.idea/
+.bsp/
+.metals/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+README.md
+
+# CI/CD files
+.github/
+.gitlab-ci.yml
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Other
+maven-repo/
+*.log
+logs/
