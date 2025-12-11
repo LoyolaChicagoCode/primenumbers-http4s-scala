@@ -57,16 +57,18 @@ Then, http://host/n returns
 
 # Sample prime numbers to try
 
-- [1013](http://linode5.cs.luc.edu:8080/1013)
-- [10007](http://linode5.cs.luc.edu:8080/10007)
-- [100003](http://linode5.cs.luc.edu:8080/100003)
-- [1000003](http://linode5.cs.luc.edu:8080/1000003)
-- [10000169](http://linode5.cs.luc.edu:8080/10000169)
-- [100000007](http://linode5.cs.luc.edu:8080/100000007)
+- [1013](https://primenumbers-http4s-scala-latest.onrender.com/1013)
+- [10007](https://primenumbers-http4s-scala-latest.onrender.com/10007)
+- [100003](https://primenumbers-http4s-scala-latest.onrender.com/100003)
+- [1000003](https://primenumbers-http4s-scala-latest.onrender.com/1000003)
+- [10000169](https://primenumbers-http4s-scala-latest.onrender.com/10000169)
+- [100000007](https://primenumbers-http4s-scala-latest.onrender.com/100000007)
+- [1000000000169](https://primenumbers-http4s-scala-latest.onrender.com/1000000000169)
+- [100000000000169](https://primenumbers-http4s-scala-latest.onrender.com/100000000000169)
 
 # Sample non-prime numbers to try
 
-- [999989](http://linode5.cs.luc.edu:8080/999989)
+- [999989](https://primenumbers-http4s-scala-latest.onrender.com/999989)
 
 # References
 
