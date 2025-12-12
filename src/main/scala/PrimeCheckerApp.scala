@@ -13,6 +13,8 @@ object PrimeCheckerApp:
   given CanEqual[Method, Method] = CanEqual.derived
 
   val routes: HttpRoutes[IO] = HttpRoutes.of[IO]:
+    case HEAD -> Root =>
+      Ok()
     case GET -> Root =>
       val title = "Welcome to the prime checker web service!"
       Ok(s"""

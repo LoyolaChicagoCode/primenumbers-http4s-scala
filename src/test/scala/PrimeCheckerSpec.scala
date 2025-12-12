@@ -62,4 +62,10 @@ class PrimeCheckerSpec extends Specification with DataTables with CatsEffect:
   private def serviceReturnsStatus(i: Int, s: Status): MatchResult[Status] =
     retPrimeChecker(i).status must beEqualTo(s)
 
+  "PrimeChecker service responds to HEAD / for health checks" >> {
+    val headRequest = Request[IO](Method.HEAD, uri"/")
+    val response = PrimeCheckerApp.app(headRequest).unsafeRunSync()
+    response.status must beEqualTo(Status.Ok)
+  }
+
 end PrimeCheckerSpec
