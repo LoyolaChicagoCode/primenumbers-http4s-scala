@@ -42,20 +42,3 @@ dockerBaseImage := "eclipse-temurin:25-jre"
 dockerExposedPorts := Seq(8080)
 dockerEnvVars := Map("PORT" -> "8080")
 dockerUsername := sys.env.get("DOCKER_USERNAME")
-
-assembly / assemblyMergeStrategy := {
-  case "module-info.class" => MergeStrategy.discard
-  case manifest if manifest.contains("MANIFEST.MF") =>
-    // We don't need manifest files since sbt-assembly will create
-    // one with the given settings
-    MergeStrategy.discard
-  case referenceOverrides if referenceOverrides.contains("reference-overrides.conf") =>
-    // Keep the content for all reference-overrides.conf files
-    MergeStrategy.concat
-  case x =>
-    // For all the other files, use the default sbt-assembly merge strategy
-    val oldStrategy = (assembly / assemblyMergeStrategy).value
-    oldStrategy(x)
-}
-
-publishTo := Some(MavenCache("local-maven", file("maven-repo")))
