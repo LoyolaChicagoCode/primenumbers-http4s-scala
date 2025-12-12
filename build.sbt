@@ -31,15 +31,15 @@ lazy val root = (project in file("."))
     )
   )
 
-assembly / mainClass := Some("edu.luc.etl.cs433.laufer.primenumbers.Main")
-
-enablePlugins(JavaAppPackaging, DockerPlugin)
+enablePlugins(JavaAppPackaging)
+enablePlugins(DockerPlugin)
 
 // Docker settings
 Docker / packageName := "primenumbers-http4s-scala"
 Docker / version := version.value
 dockerUpdateLatest := true
-dockerBaseImage := "eclipse-temurin:25-jre"
+dockerBaseImage := "eclipse-temurin:25-jre-jammy"
+dockerBuildOptions += "--platform=linux/amd64"
 dockerExposedPorts := Seq(8080)
 dockerEnvVars := Map("PORT" -> "8080")
 dockerUsername := sys.env.get("DOCKER_USERNAME")
