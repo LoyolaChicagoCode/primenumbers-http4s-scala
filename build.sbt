@@ -38,6 +38,7 @@ enablePlugins(JavaAppPackaging, DockerPlugin)
 // Docker settings
 Docker / packageName := "primenumbers-http4s-scala"
 Docker / version := version.value
+dockerUpdateLatest := true
 dockerBaseImage := "eclipse-temurin:25-jre"
 dockerExposedPorts := Seq(8080)
 dockerEnvVars := Map("PORT" -> "8080")
