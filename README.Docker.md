@@ -1,14 +1,23 @@
 # Docker Deployment Guide
 
-This project has been converted from Procfile-based deployment to Docker-based containerized deployment.
+This project uses SBT Native Packager with the Docker plugin for containerized deployment.
 
 ## Building the Docker Image
 
-Build the Docker image using:
+Build the Docker image using SBT:
 
 ```bash
-docker build -t primenumbers-http4s-scala:latest .
+# Build image locally
+sbt docker:publishLocal
+
+# Or build and push to Docker Hub (set DOCKER_USERNAME env var first)
+export DOCKER_USERNAME=your-dockerhub-username
+sbt docker:publish
 ```
+
+The image will be tagged as:
+- `$DOCKER_USERNAME/primenumbers-http4s-scala:0.0.4-SNAPSHOT`
+- `$DOCKER_USERNAME/primenumbers-http4s-scala:latest`
 
 ## Running the Container
 
@@ -17,33 +26,13 @@ docker build -t primenumbers-http4s-scala:latest .
 Run the container with:
 
 ```bash
-docker run -d -p 8080:8080 --name primenumbers primenumbers-http4s-scala:latest
+docker run -d -p 8080:8080 --name primenumbers primenumbers-http4s-scala:0.0.4-SNAPSHOT
 ```
 
 To run on a different port:
 
 ```bash
-docker run -d -p 3000:3000 -e PORT=3000 --name primenumbers primenumbers-http4s-scala:latest
-```
-
-### Using Docker Compose
-
-Start the application with:
-
-```bash
-docker-compose up -d
-```
-
-Stop the application:
-
-```bash
-docker-compose down
-```
-
-View logs:
-
-```bash
-docker-compose logs -f
+docker run -d -p 3000:3000 -e PORT=3000 --name primenumbers primenumbers-http4s-scala:0.0.4-SNAPSHOT
 ```
 
 ## Container Management
@@ -88,32 +77,57 @@ This Docker container can be deployed to various cloud platforms:
 - **DigitalOcean**: App Platform or Kubernetes
 - **Heroku**: Container Registry and Runtime
 
-### Example: Heroku Container Deployment
+### Example: Deploy to Render.com
+
+1. Connect your GitHub repository to Render
+2. Create a new Web Service
+3. Render will automatically detect and build from SBT
+4. Or use Docker: Set build command to `sbt docker:stage` and use the generated image
+
+### Example: Manual Docker Hub Deployment
 
 ```bash
-# Login to Heroku Container Registry
-heroku container:login
+# Set your Docker Hub username
+export DOCKER_USERNAME=your-dockerhub-username
 
-# Create a Heroku app (if not already created)
-heroku create your-app-name
+# Build and push to Docker Hub
+sbt docker:publish
 
-# Build and push the image
-heroku container:push web -a your-app-name
-
-# Release the image
-heroku container:release web -a your-app-name
-
-# Open the app
-heroku open -a your-app-name
+# Pull and run on any server
+docker pull $DOCKER_USERNAME/primenumbers-http4s-scala:latest
+docker run -d -p 8080:8080 $DOCKER_USERNAME/primenumbers-http4s-scala:latest
 ```
 
 ## Environment Variables
 
-- `PORT`: The port the application listens on (default: 8080)
+## SBT Docker Commands
+
+```bash
+# Show generated Dockerfile
+sbt docker:stage
+
+# Build image locally (don't push)
+sbt docker:publishLocal
+
+# Build and push to Docker Hub
+sbt docker:publish
+
+# Clean Docker artifacts
+sbt docker:clean
+```
+
+## Configuration
+
+Docker settings are configured in `build.sbt`:
+- Base image: `eclipse-temurin:25-jre` (Java SE 25)
+- Exposed port: 8080
+- Username: Set via `DOCKER_USERNAME` environment variable
 
 ## Notes
 
-- The container runs as a non-root user (appuser) for security
-- Health checks are configured in docker-compose.yml
+- The container runs as a non-root user (daemon) for security
+- The image is automatically optimized by sbt-native-packager
+- Java SE 25 JRE is used for the runtime environment
+- No manual Dockerfile needed - everything is managed by SBTyml
 - The image uses a multi-stage build to minimize the final image size
 - Java 17 JRE is used for the runtime environment

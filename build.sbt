@@ -33,7 +33,15 @@ lazy val root = (project in file("."))
 
 assembly / mainClass := Some("edu.luc.etl.cs433.laufer.primenumbers.Main")
 
-enablePlugins(JavaAppPackaging)
+enablePlugins(JavaAppPackaging, DockerPlugin)
+
+// Docker settings
+Docker / packageName := "primenumbers-http4s-scala"
+Docker / version := version.value
+dockerBaseImage := "eclipse-temurin:25-jre"
+dockerExposedPorts := Seq(8080)
+dockerEnvVars := Map("PORT" -> "8080")
+dockerUsername := sys.env.get("DOCKER_USERNAME")
 
 assembly / assemblyMergeStrategy := {
   case "module-info.class" => MergeStrategy.discard
